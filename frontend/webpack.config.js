@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         path: __dirname + '/public',
-        filename: '.app.js'
+        filename: './app.js'
     },
     devServer: {
         port: 8080,
@@ -19,7 +19,7 @@ module.exports = {
             bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugins: [
+    plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
