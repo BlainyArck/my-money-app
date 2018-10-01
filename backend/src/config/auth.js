@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const env = require('../.env')
 
-module.exports = (requestAnimationFrame, res, next) => {
+module.exports = (req, res, next) => {
     //CORS prefligh request
     if (req.method === 'OPTIONS') {
         next()
@@ -18,7 +18,7 @@ module.exports = (requestAnimationFrame, res, next) => {
                     errors: ['Failed to authenticate token.']
                 })
             } else {
-                // req.decoded = decoded
+                req.decoded = decoded
                 next()
             }
         })
